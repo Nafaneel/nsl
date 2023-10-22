@@ -1,0 +1,145 @@
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", "Arial", monospace;
+}
+
+
+
+
+.bg-image {
+  /* The image used */
+  /* background-image: url("https://wallpaperaccess.com/full/3949372.jpg"); 
+  /* https://img.freepik.com/free-vector/dark-carbon-fiber-texture-pattern-background_1017-37140.jpg */
+  /* background-image: url("https://img.freepik.com/premium-vector/green-arrow-dark-grey-shadow-line-design-background-geometric-overlap-layer-paper-cut-style_252051-3480.jpg"); */
+  
+  background-image: url("https://cdn.dribbble.com/users/707385/screenshots/3926398/4_1_2.gif"); 
+ 
+
+  /* Add the blur effect */
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 65%;
+  padding: 10px;
+  text-align: center;
+}
+.sequence {
+
+  border: 2px solid green;
+  border-radius: 10px;
+ 
+}
+
+.edit {
+  border: 2px solid #2338d1;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.inputBox {
+  height: 120;
+  border: 2px solid #2338d1;
+  border-radius: 2px;
+
+  
+}
+
+.box {
+  background: #333333;
+  color: #ffffff;
+  border-radius: 0px;
+  font-size: 12px;
+  padding: 4px 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+  a.check{
+   background: linear-gradient(to right,#1692d1 ,#139cc1);
+   background-color: #1692d1;
+   color: #fff;
+   font-family: Trebuchet MS;
+   font-size: 12px;
+   font-weight: 800;
+   font-style: italic;
+   text-decoration: none;
+   padding: 4px 43px;
+   border: 0px solid #000;
+   border-radius: 3px;
+   display: inline-block;
+  }
+  a.check:hover{
+   background: linear-gradient(to right,#53a0d6 ,#53a9c8);
+   background-color: #53a0d6;
+  }
+  a.check:active{
+   transform: scale(0.95);
+  }
+  a.add{
+   background: linear-gradient(to right,#20ca19 ,#4fe033);
+   background-color: #20ca19;
+   color: #fff;
+   font-family: Trebuchet MS;
+   font-size: 12px;
+   font-weight: 800;
+   font-style: italic;
+   text-decoration: none;
+   padding: 4px 55px;
+   border: 0px solid #000;
+   border-radius: 3px;
+   display: inline-block;
+  }
+  a.add:hover{
+   background: linear-gradient(to right,#56d054 ,#6ee35e);
+   background-color: #56d054;
+  }
+  a.add:active{
+   transform: scale(0.95);
+  }
+  a.take{
+   background: linear-gradient(to right,#d13e16 ,#c11313);
+   background-color: #d13e16;
+   color: #fff;
+   font-family: Trebuchet MS;
+   font-size: 12px;
+   font-weight: 800;
+   font-style: italic;
+   text-decoration: none;
+   padding: 4px 43px;
+   border: 0px solid #000;
+   border-radius: 3px;
+   display: inline-block;
+  }
+  a.take:hover{
+   background: linear-gradient(to right,#d66453 ,#c85353);
+   background-color: #d66453;
+  }
+  a.take:active{
+   transform: scale(0.95);
+  }

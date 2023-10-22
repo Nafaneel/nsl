@@ -1,0 +1,163 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<div class="bg-image"></div>
+
+<link rel="stylesheet" href="../css/all.css">
+<script src="../java/goBack.js"></script>
+
+<div class="bg-text">
+  <img id="exitButton" src="../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">
+  <h3>NEXUSSNARL©</h3>
+  <hr class="solid">
+  <br>
+  <hr class="solid" color="#6b6b6b">
+  <h4 id="userDisp"><i style='color: #979998'>USER:</i> NULL</h4>
+  <iframe id="getTokens" src="https://data.nafaneel.uk/tokens/tokensGet.html?user=null" scrolling="no" width="60%"
+    height="23" style="border:0px solid black;"></iframe>
+  <hr class="solid" color="#6b6b6b">
+  <br>
+  <input class="box" type="text" placeholder="Enter Discord Username" id="username" required>
+  <input class="amm" type="text" placeholder="Enter Ammount" id="ammount" required width="1" maxlength="3" size="3"
+    value="0">
+  <br>
+  <br>
+  <a class="add" href="#" onclick="addT()">ADD TOKENS</a>
+  <br>
+  <br>
+  <a class="take" href="#" onclick="removeT()">REMOVE TOKENS</a>
+  <br>
+  <br>
+  <a class="check" href="#" onclick="getTokens()">CHECK TOKENS</a>
+</div>
+
+<script>
+
+  function sendMessage(testSend) {
+
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/993937145423200350/DYztau2PKOsnuH4iJpqAvyVYntLuIUFXSDuUtuW5dHtMwezGM9Bc0wugWp33sCOBH-cw");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      username: "NexusSnarl - Webhook POST",
+      content: "++" + testSend,
+    }
+
+    request.send(JSON.stringify(params));
+  }
+  function addT() {
+    var user = document.getElementById("username").value;
+    var ammount = document.getElementById("ammount").value;
+    sendMessage("/addtokens " + user + " " + ammount);
+    alert("Added: " + ammount + " For user: " + user);
+  }
+  function removeT() {
+    var user = document.getElementById("username").value;
+    var ammount = document.getElementById("ammount").value;
+    sendMessage("/removetokens " + user + " " + ammount);
+    alert("Removed: " + ammount + " From user: " + user);
+  }
+
+  function getTokens() {
+    var user = document.getElementById("username").value;
+    document.getElementById("userDisp").innerHTML = "<i style='color: #979998'>USER:</i> " + user;
+    document.getElementById('getTokens').src = "https://data.nafaneel.uk/tokens/tokensGet.html?user=" + user;
+  }
+</script>
+
+<style>
+  .amm {
+    background: #114c80;
+    color: #ffffff;
+    border-radius: 0px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box {
+    background: #333333;
+    color: #ffffff;
+    border-radius: 0px;
+    padding: 4px 6px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a.check {
+    background: linear-gradient(to right, #1692d1, #139cc1);
+    background-color: #1692d1;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+    padding: 4px 43px;
+    border: 0px solid #000;
+    border-radius: 3px;
+    display: inline-block;
+
+  }
+
+  a.check:hover {
+    background: linear-gradient(to right, #53a0d6, #53a9c8);
+    background-color: #53a0d6;
+  }
+
+  a.check:active {
+    transform: scale(0.95);
+  }
+
+  a.add {
+    background: linear-gradient(to right, #20ca19, #4fe033);
+    background-color: #20ca19;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+    padding: 4px 55px;
+    border: 0px solid #000;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  a.add:hover {
+    background: linear-gradient(to right, #56d054, #6ee35e);
+    background-color: #56d054;
+  }
+
+  a.add:active {
+    transform: scale(0.95);
+  }
+
+  a.take {
+    background: linear-gradient(to right, #d13e16, #c11313);
+    background-color: #d13e16;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 12px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+    padding: 4px 43px;
+    border: 0px solid #000;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  a.take:hover {
+    background: linear-gradient(to right, #d66453, #c85353);
+    background-color: #d66453;
+  }
+
+  a.take:active {
+    transform: scale(0.95);
+  }
+</style>

@@ -1,0 +1,52 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../css/all.css">
+<link rel="stylesheet" href="../css/profilePage.css">
+<script src="../java/goBack.js"></script>
+
+
+<div class="bg-image"></div>
+
+
+<div class="main">
+  <div class="bg-text">
+    <img id="exitButton" src="../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">
+    <h3>NEXUSSNARL©</h3>
+    <hr class="solid">
+    <h4 id="welcome">Hello, </h4>
+    <h3>You have:</h3>
+    <div class="tokens">
+      <iframe id="getTokens" src="https://data.nafaneel.repl.co/tokens/tokensGet.html?user=null" scrolling="no"
+        width="40%" height="23" style="border:0px solid black;"></iframe>
+    </div>
+    <br>
+    <br>
+    <a class="update" href="#" onclick="getTokensB()">Click Here To Update</a>
+
+
+
+
+  </div>
+</div>
+
+<script>
+  const queryString = window.location.search;
+  console.log(queryString);
+  strNew = queryString.replace("?user=", "");
+  if (queryString == "") {
+    window.location.replace('error.html');
+  }
+  document.getElementById("welcome").innerHTML = "Hello, " + strNew;
+
+  document.getElementById('getTokens').src = "https://data.nafaneel.repl.co/tokens/tokensGet.html?user=" + strNew;
+
+  function getTokensB() {
+    document.getElementById('getTokens').src = "https://data.nafaneel.repl.co/tokens/tokensGet.html?user=" + strNew;
+  }
+
+</script>

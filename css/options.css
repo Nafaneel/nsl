@@ -1,0 +1,201 @@
+
+
+
+
+h1 {
+
+  color: #FFFFFF;
+
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18;
+}
+
+h2 {
+  color: #FFFFFF;
+
+  text-shadow: 0 0 10px #FFFFFF;
+}
+
+
+
+p {
+  color: #FFFFFF;
+
+  text-shadow: 0 0 10px #FFFFFF;
+}
+
+
+
+.bn6 {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #232423;
+  padding: 0.3em 1.2em;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  font-weight: 550;
+  color: #ffffff;
+  background-size: 100% 100%;
+  box-shadow: 0 0 0 4px #232423 inset;
+}
+
+.bn6:hover {
+  background-image: linear-gradient(55deg,
+      transparent 10%,
+      #161616 10% 20%,
+      transparent 20% 30%,
+      #161616 30% 40%,
+      transparent 40% 50%,
+      #161616 50% 60%,
+      transparent 60% 70%,
+      #161616 70% 80%,
+      transparent 80% 90%,
+      #161616 90% 100%);
+  animation: background 3s linear infinite;
+}
+
+a.nexus{
+ background: linear-gradient(to right,#2bbe00 ,#066984);
+ background-color: #2bbe00;
+ color: #fff;
+ font-family: Trebuchet MS;
+ font-size: 14px;
+ font-weight: 800;
+ font-style: italic;
+ text-decoration: none;
+ padding: 5px 58px;
+ border: 0px solid #000;
+ border-radius: 5px;
+ display: inline-block;
+ box-shadow: 0px 9px 15px 1px #2D2D2D;
+}
+a.nexus:hover{
+ background: linear-gradient(to right,#5ac551 ,#518095);
+ background-color: #5ac551;
+}
+a.nexus:active{
+ transform: scale(0.95);
+}
+
+a.slt{
+ background: linear-gradient(to right,#0037be ,#006681);
+ background-color: #0037be;
+ color: #fff;
+ font-family: Trebuchet MS;
+ font-size: 14px;
+ font-weight: 800;
+ font-style: italic;
+ text-decoration: none;
+ padding: 5px 58px;
+ border: 0px solid #000;
+ border-radius: 5px;
+ display: inline-block;
+ box-shadow: 0px 9px 15px 1px #2D2D2D;
+}
+a.slt:hover{
+ background: linear-gradient(to right,#5160c5 ,#517e93);
+ background-color: #5160c5;
+}
+a.slt:active{
+ transform: scale(0.95);
+}
+
+a.festive{
+ background: linear-gradient(to right,#f0524d ,#8a0a06);
+ background-color: #9ef936;
+ color: #fff;
+ font-family: Trebuchet MS;
+ font-size: 17px;
+ font-weight: 800;
+ font-style: italic;
+ text-decoration: none;
+ padding: 8px 15px;
+ border: 0px solid #000;
+ border-radius: 4px;
+ display: inline-block;
+}
+a.festive:hover{
+ background: linear-gradient(to right,#aafa60 ,#717173);
+ background-color: #aafa60;
+}
+a.festive:active{
+ transform: scale(0.95);
+}
+
+a.tokenButton{
+ background: linear-gradient(to right,#00adbe ,#063284);
+ background-color: #00adbe;
+ color: #fff;
+ font-family: Trebuchet MS;
+ font-size: 14px;
+ font-weight: 800;
+ font-style: italic;
+ text-decoration: none;
+ padding: 5px 58px;
+ border: 0px solid #000;
+ border-radius: 5px;
+ display: inline-block;
+ box-shadow: 0px 9px 15px 1px #2D2D2D;
+}
+a.tokenButton:hover{
+ background: linear-gradient(to right,#51b7c5 ,#515e95);
+ background-color: #51b7c5;
+}
+a.tokenButton:active{
+ transform: scale(0.95);
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+a.adminButton {
+  background: linear-gradient(to right, #373737, #575757);
+  background-color: #373737;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 16px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 5px 40px;
+  border: 0px solid #000;
+  border-radius: 2px;
+  display: inline-block;
+  text-shadow: 2px 2px 0px #000;
+}
+
+a.adminButton:hover {
+  background: linear-gradient(to right, #606060, #737373);
+  background-color: #606060;
+}
+
+a.adminButton:active {
+  transform: scale(0.95);
+}
+
+a.copycat {
+  background: linear-gradient(to right, #ff8600, #ff8600);
+  background-color: #ff8600;
+  color: #fff;
+  font-family: Trebuchet MS;
+  font-size: 14px;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 4px 45px;
+  border: 0px solid #000;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+a.copycat:hover {
+  background: linear-gradient(to right, #ff9751, #ff9751);
+  background-color: #ff9751;
+}
+
+a.copycat:active {
+  transform: scale(0.95);
+}

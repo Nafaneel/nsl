@@ -1,0 +1,222 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="bg-image"></div>
+
+<link rel="stylesheet" href="../css/all.css">
+<link rel="stylesheet" href="../css/tokens.css">
+
+<div class="main">
+  <div class="bg-text">
+    <!--<img src="../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">-->
+    <img id="exitButton" src="../images/nick.png" style="width:55px;height:50px;" onclick="backClick()">
+    <h3>NEXUSSNARL©</h3>
+    <hr class="solid">
+    <h3>Select Folder:</h3>
+
+    <center><select position=center id="folder" position=center class="selectBox">
+        <option disabled>FOLDER OPTION</option>
+        <option>RUOTR</option>
+        <option>MISC</option>
+      </select></center>
+    <br>
+    <a class="updateBox" href="#" onclick="update()">UPDATE SELECTION</a>
+    <h3 id="msg">Select Sound From ↖</h3>
+
+    <center><select position=center id="RUOTR" position=center class="selectBox">
+        <option>RUOTR</option>
+        <option>N GOLDING</option>
+        <option>A ROUND</option>
+        <option>J WINGROVE</option>
+        <option>S JACKSON</option>
+        <option>J DAVIES</option>
+        <option>S WALSH</option>
+        <option>E POMERY</option>
+        <option>B BROWN</option>
+        <option>S NETLEY</option>
+        <option>N GLESNISTER</option>
+        <option>E RADFORD</option>
+        <option>SITE TEAM</option>
+
+      </select></center>
+
+    <center><select position=center id="MISC" position=center class="selectBox">
+        <option disabled>MISC</option>
+        <option>TEST</option>
+      </select></center>
+
+
+    <div class="tokens">
+      <iframe id="getTokens" src="https://data.nafaneel.repl.co/tokens/tokensGet.html?user=null" scrolling="no"
+        width="60%" height="23" style="border:0px solid black;"></iframe>
+    </div>
+    <br>
+    <br>
+    <b>Delay(s) </b><input class="box" type=text id="delayBox" width="1" maxlength="3" size="3" value="0">
+    <br>
+    <br>
+    <a class="send" href="#" onclick="preSend()">📶 SEND COMMAND</a>
+  </div>
+</div>
+
+<script>
+  const queryString = window.location.search;
+  strNew = queryString.replace("?user=", "");
+  document.getElementById('getTokens').src = "https://data.nafaneel.repl.co/tokens/tokensGet.html?user=" + strNew;
+</script>
+
+<style>
+  .selectBox {
+    background: #333333;
+    color: #ffffff;
+    padding: 3px 15px;
+    font-size: 12px;
+    box-shadow: 0px 0px 10px 0px #2D2D2D;
+    border-radius: 0px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a.updateBox {
+    background: linear-gradient(to right, #3c3c3c, #2f2f2f);
+    background-color: #3c3c3c;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 11px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+    padding: 4px 8px;
+    border: 0px solid #000;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0px 0px 10px 0px #2D2D2D;
+    text-shadow: 0px 2px 0px #000;
+  }
+
+  a.updateBox:hover {
+    background: linear-gradient(to right, #636363, #5c5c5c);
+    background-color: #636363;
+  }
+
+  a.updateBox:active {
+    transform: scale(0.95);
+  }
+
+  a.send {
+    background: linear-gradient(to right, #19ca1d, #12ac0c);
+    background-color: #19ca1d;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 14px;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+    padding: 7px 33px;
+    border: 0px solid #000;
+    border-radius: 4px;
+    display: inline-block;
+    box-shadow: 0px 0px 10px 0px #2D2D2D;
+    text-shadow: 0px 2px 0px #000;
+  }
+
+  a.send:hover {
+    background: linear-gradient(to right, #54d055, #52b651);
+    background-color: #54d055;
+  }
+
+  a.send:active {
+    transform: scale(0.95);
+  }
+</style>
+
+
+<script>
+  function sendMessage(testSend) {
+
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1062394405690036236/zcrdBWSJt3wpCsNbn2BGaEIrFL_ggOVTrWGa39CUz41CEXEkJeW4OkbIuo8pQYOKcesk");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      username: "NexusSnarl - Webhook",
+      content: "++" + testSend,
+    }
+
+    request.send(JSON.stringify(params));
+    alert("Request For Sound Sent!");
+  }
+
+  function hideAll() {
+    document.getElementById("RUOTR").style.visibility = "hidden";
+    document.getElementById("MISC").style.visibility = "hidden";
+  }
+  hideAll();
+  function update() {
+    hideAll();
+    var e = document.getElementById("folder");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    document.getElementById("msg").innerHTML = "Select Sound From " + text;
+    document.getElementById(text).style.visibility = "visible";
+  }
+  //document.getElementById("sounds").style.visibility="hidden";
+  document.getElementById("sounds").style.visibility = "visible";
+  getTokens();
+  function getTokens() {
+    const queryString = window.location.search;
+    console.log(queryString);
+    strNew = queryString.replace("?user=", "");
+
+    fileVar = "../tokens/" + strNew + ".txt"
+
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", fileVar, false);
+    rawFile.onreadystatechange = function () {
+      if (rawFile.readyState === 4) {
+        if (rawFile.status === 200 || rawFile.status == 0) {
+          var allText = rawFile.responseText;
+          responseText = strNew + " You have " + allText + " Tokens remaining!";
+          //alert(responseText);
+
+          document.getElementById("tokensRemainingButton").innerHTML = "Tokens Remaining: " + allText;
+          return allText;
+        }
+      }
+    }
+    rawFile.send(null);
+  }
+  function preSend() {
+    const queryString = window.location.search;
+    console.log(queryString);
+    strNew = queryString.replace("?user=", "");
+    var e = document.getElementById("folder");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    var delay = document.getElementById("delayBox").value;
+
+    if (text == "RUOTR") {
+      var e = document.getElementById("RUOTR");
+      var value = e.value;
+      var ruotr_val = e.options[e.selectedIndex].text;
+      //alert("~"+text +' "'+ ruotr_val +'" '+ strNew);
+      sendMessage("/" + text + ' "' + strNew + '" "' + ruotr_val + '" ' + delay);
+    }
+    if (text == "MISC") {
+      var e = document.getElementById("MISC");
+      var value = e.value;
+      var misc_val = e.options[e.selectedIndex].text;
+      //alert("~"+text +' "'+ strNew +'" '+ misc_val +" "+delay);
+      sendMessage("/" + text + ' "' + strNew + '" "' + misc_val + '" ' + delay);
+    }
+
+  }
+</script>
+
+
+<script src="/java/goBack.js"></script>

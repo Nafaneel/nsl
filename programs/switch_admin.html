@@ -1,0 +1,86 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../css/all.css">
+<link rel="stylesheet" href="../css/switchPage.css">
+<script src="../java/goBack.js"></script>
+
+
+<div class="bg-image"></div>
+
+
+<div class="main">
+  <div class="bg-text">
+    <img id="exitButton" src="../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">
+    <h3>NEXUSSNARL©</h3>
+    <hr class="solid">
+    <h4 id="welcome">Hello, </h4>
+    <a class="adminButton" href="#" onclick="seqAdmin()">Admin Sequencer Times</a>
+    <br>
+    <br>
+    <hr>
+    <h5>Click one of the following options below to remotely start or end a program.</h5>
+
+    <span><button class="start" onclick="ns()">NexusSnarl</button><button class="stop">STOP</button></span>
+    <br>
+    <br>
+    <span><button class="start" onclick="timeStart()">TimeSpeak</button><button class="stop"
+        onclick="timeStop()">STOP</button></span>
+    <br>
+    <br>
+    <span><button class="start" onclick="seqStart()">Sequencer</button><button class="stop"
+        onclick="seqStop()">STOP</button></span>
+    <br>
+    <br>
+    <span><button class="start" onclick="endAll()">End All Tasks</button><button class="stop">STOP</button></span>
+
+
+
+
+
+
+  </div>
+</div>
+<style>
+  .start {
+    background: linear-gradient(to right, #7aeb34, #419e06);
+    color: #000000;
+    font-family: Trebuchet MS;
+    font-size: 14px;
+    font-weight: 800;
+    font-style: italic;
+    padding: 5px 30px;
+    border-radius: 1px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a.start:hover {
+    background: linear-gradient(to right, #55f75d, #c3e35e);
+    background-color: #55f75d;
+  }
+
+  a.start:active {
+    transform: scale(0.95);
+  }
+
+  .stop {
+    background: linear-gradient(to right, #f71e1e, #a30505);
+    color: #000000;
+    font-family: Trebuchet MS;
+    font-size: 14px;
+    font-weight: 800;
+    font-style: italic;
+    padding: 5px 30px;
+    border-radius: 1px;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+
+<script src="../java/nexusSwitch.js"></script>

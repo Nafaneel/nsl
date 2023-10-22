@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="../../java/goBack.js"></script>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="sequencer.css">
+  <script>
+    function formatString() {
+      //var input = "['09:30:00 fony_solo\n', '10:25:00 final\n', '10:27:00 choke\n', '11:30:00 fony1\n', '12:30:00 lousyfaggot\n', '12:45:00 slutonjunk\n', '13:30:00 fony_solo\n', '14:30:00 final\n', '14:45:00 burp\n']";
+
+      var rawFile = new XMLHttpRequest();
+      rawFile.open("GET", "sequencer.txt", false);
+      rawFile.onreadystatechange = function () {
+        if (rawFile.readyState === 4) {
+          if (rawFile.status === 200 || rawFile.status == 0) {
+            var input = rawFile.responseText;
+            input = input.replace(/\['/g, "");  // remove opening brackets
+            input = input.replace(/\\n/g, "");
+            input = input.replace(/'\, /g, "<br>"); // replace comma + space with new line
+            input = input.replace(/\']/g, "");  // remove closing brackets
+
+            document.getElementById("output").innerHTML = input;
+          }
+        }
+      }
+      rawFile.send(null);
+
+    }
+  </script>
+</head>
+
+<body onload="formatString()">
+  <div class="bg-image"></div>
+  <div class="bg-text">
+    <img src="../../../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick2()">
+    <h3>NEXUSSNARL©</h3>
+    <hr class="solid">
+    <h5 id="time"></h5>
+    <h4>
+      <center><i>CURRENT TIMES:</i></center>
+    </h4>
+    <div class="sequence">
+      <iframe id="getTokens" src="https://data.nafaneel.uk/app/sequencer.html" scrolling="yes" width="60%" height="150"
+        style="border:0px solid black;"></iframe>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function refreshTime() {
+    const timeDisplay = document.getElementById("time");
+    const dateString = new Date().toLocaleString();
+    const formattedString = dateString.replace(", ", " - ");
+    timeDisplay.textContent = formattedString;
+  }
+  setInterval(refreshTime, 1000);
+</script>

@@ -1,0 +1,101 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="bg-image"></div>
+
+<link rel="stylesheet" href="../css/bye.css">
+<link rel="stylesheet" href="../css/nsPage.css">
+<link rel="stylesheet" href="../css/tokens.css">
+
+<script src="../java/goBack.js"></script>
+<script src=" ../java/soundSend.js"></script>
+<script src="../java/getTokens.js"></script>
+<script src="../data/users.js">userCheck();</script>
+
+
+
+<!--<marquee class="top-left" behavior="scroll" direction="left" scrollamount='5'>
+  <span style="background-color: #ffffff; color: #ff0000;">
+
+    <h2>
+      <b><i></i></b>
+    </h2>
+  </span>
+</marquee>-->
+
+<div class="main">
+  <div class="bg-text">
+    <div id="contents">
+      <!--<img src="../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">-->
+      <img id="exitButton" src="../images/grange.png" style="width:55px;height:50px;" onclick="backClick()">
+      <h3>GOODBYE GRANGE</h3>
+      <hr class="solid" color="#6b6b6b">
+      <h5 id="welcome"></h5>
+      <label position=center for="sounds">
+        <h4><i>Select Goodbye Sound:</i></h4>
+      </label>
+
+
+      <center><select position=center id="sounds" position=center class="box">
+          <option disabled>↘ LAST DAY SOUNDS! ↙</option>
+          <option>d4nny</option>
+          <option>something_special</option>
+          <option>outro</option>
+          <option>radio_gaga</option>
+
+        </select></center>
+
+      <br>
+      <b style="color: #858585">Delay(s) </b><input class="box" type=text id="testTest" width="1" maxlength="3" size="3"
+        value="0">
+      <br>
+      <h4 style="color: #14676b"><i>COST: 1 x TOKEN(s)</i></h4>
+      <div class="tokens">
+        <iframe id="getTokens" src="https://data.nafaneel.uk/tokens/tokensGet.html?user=null" scrolling="no" width="60%"
+          height="23" style="border:0px solid black;"></iframe>
+      </div>
+      <h4 style="color: #979998;" id="tokensUsed"><i>Tokens Used: None</i></h4>
+      <a class="send" onclick="startSend()" href="#">SEND COMMAND</a>
+      <h5 style="color: #545454;"><i>NAFANEEL.UK</i> | <i>11/5/23</i></h5>
+    </div>
+    <div id="denied" hidden>
+      <!--ERROR PAGE-->
+      <center>
+        <h2><b>UH OH..</b></h2>
+        <p>Looks like you shouldnt be accessing this page 🧐</p>
+        <p style="color: #eb9234"><i>Your device is not registered to the NAFANEEL.UK network. Or simply you have been
+            denied access</i></p>
+      </center>
+    </div>
+  </div>
+</div>
+
+<script>
+  const queryString2 = window.location.search;
+  strNew2 = queryString2.replace("?user=", "");
+  document.getElementById('getTokens').src = "https://data.nafaneel.uk/tokens/tokensGet.html?user=" + strNew2;
+  optionPass(strNew2);
+
+  document.getElementById("content").style.visibility = "visible";
+  document.getElementById("denied").style.visibility = "hidden";
+</script>
+
+<style>
+  .top-left {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+  }
+
+  .box {
+    background: #333333;
+    color: #ffffff;
+    border-radius: 0px;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

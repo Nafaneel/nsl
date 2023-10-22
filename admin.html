@@ -1,0 +1,156 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/all.css">
+<link rel="stylesheet" href="css/optionsPage.css">
+
+<div class="bg-image"></div>
+
+<script src="java/admin.js"></script>
+<script src="java/logOut.js"></script>
+
+<div class="main">
+  <div class="bg-text">
+    <img src="images/nexusSnarl.png" style="width:55px;height:50px;" onclick="logout()">
+    <h3 onclick="secretPage()">NEXUSSNARL©</h3>
+    <hr class="solid" color="#303030">
+
+    <h5>
+      <div id="time">WELCOME!</div>
+    </h5>
+    <hr class="solid" color="#303030">
+
+    <h4 style="color: #979998;"><i>Choose An Application</i></h4>
+    <a href="#" id="nsB" onclick="ns()" class="adminButton"><img src="images/nexusSnarl.png"
+        style="width:15px;height:15px;">
+      NexusSnarl</a>
+    <br>
+    <br>
+    <a href="#" id="sltB" onclick="slt()" class="adminButton"><img src="images/grange.png"
+        style="width:15px;height:15px;"> SLT
+      Assistance</img></a>
+    <br>
+    <br>
+    <a href="#" id="phB" onclick="copycat()" class="adminButton">C0pycat - PHASE 2</a>
+    <br>
+    <br>
+    <a href="#" id="ph2B" onclick="copycat_lib()" class="adminButton">C0pycat - Library</a>
+    <br>
+    <!--<br>
+    <a href="#" id="ph2B" onclick="bye()" class="adminButton">🎉LAST DAY🎉</a>
+    <br>-->
+    <h4 style="color: #979998;"><i>Other Functions</i></h4>
+    <a class="adminButton" href="#" onclick="tokensPage()">Tokens</a>
+    <br>
+    <br>
+    <a class="adminButton" href="#" onclick="nexusSwitch()">NexusSwitch</a>
+    <br>
+    <br>
+    <a id="test" class="adminButton" href="#" onclick="tokenAdmin()">Token Admin</a>
+    <br>
+    <h5 style="color: #545454;"><i>NAFANEEL.UK</i> | <i>18/2/23</i></h5>
+
+
+  </div>
+</div>
+<script>
+  var taskCol = "Null";
+  function getTask() {
+    fileVar = "NexusSwitch/task.txt";
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", fileVar, false);
+    rawFile.onreadystatechange = function () {
+      if (rawFile.readyState === 4) {
+        if (rawFile.status === 200 || rawFile.status == 0) {
+          var allText = rawFile.responseText;
+          //responseText = strNew +" You have "+allText+" Tokens remaining!";
+          //alert(responseText);
+
+          document.getElementById("task").innerHTML = allText;
+        }
+      }
+    }
+    rawFile.send(null);
+
+  }
+  getTask();
+
+  function refreshTime() {
+    const timeDisplay = document.getElementById("time");
+    const dateString = new Date().toLocaleString();
+    const formattedString = dateString.replace(", ", " - ");
+    timeDisplay.textContent = formattedString;
+  }
+  setInterval(refreshTime, 1000);
+
+  function secretPage() {
+    const queryString = window.location.search;
+    strNew = queryString.replace("?user=", "");
+    window.location.replace('credits.html?user=' + strNew);
+  }
+</script>
+
+
+
+<style>
+  a.copycat {
+    background: linear-gradient(to right, #ff8600, #ff8600);
+    background-color: #ff8600;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 14px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 4px 45px;
+    border: 0px solid #000;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  a.copycat:hover {
+    background: linear-gradient(to right, #ff9751, #ff9751);
+    background-color: #ff9751;
+  }
+
+  a.copycat:active {
+    transform: scale(0.95);
+  }
+
+  a.adminButton {
+    background: linear-gradient(to right, #373737, #575757);
+    background-color: #373737;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 16px;
+    font-weight: 800;
+    font-style: normal;
+    text-decoration: none;
+    padding: 5px 40px;
+    border: 0px solid #000;
+    border-radius: 2px;
+    display: inline-block;
+    text-shadow: 2px 2px 0px #000;
+  }
+
+  a.adminButton:hover {
+    background: linear-gradient(to right, #606060, #737373);
+    background-color: #606060;
+  }
+
+  a.adminButton:active {
+    transform: scale(0.95);
+  }
+</style>
+
+
+
+
+
+<script>
+
+</script>

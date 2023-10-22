@@ -1,0 +1,21 @@
+ .tokens {
+   opacity: 0;
+   animation-name: tokensFlash;
+   animation-duration: 2s;
+   animation-delay: 1s;
+   animation-fill-mode: forwards;
+
+ }
+
+ @keyframes tokensFlash {
+   0% {
+     opacity: 0;
+     scale: 2;
+   }
+
+   100% {
+     opacity: 1;
+     scale: 1;
+   }
+
+ }
