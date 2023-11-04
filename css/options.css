@@ -136,6 +136,9 @@ a.tokenButton{
  border-radius: 5px;
  display: inline-block;
  box-shadow: 0px 9px 15px 1px #2D2D2D;
+
+ width: 50%;
+ margin-inline: 10px;
 }
 a.tokenButton:hover{
  background: linear-gradient(to right,#51b7c5 ,#515e95);
@@ -165,6 +168,9 @@ a.adminButton {
   border-radius: 2px;
   display: inline-block;
   text-shadow: 2px 2px 0px #000;
+
+  width: 50%;
+  margin-inline: 10px;
 }
 
 a.adminButton:hover {
